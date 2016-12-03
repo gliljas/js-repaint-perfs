@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="description" content="DBMON Knockout"/>
+    <script src="../lib/knockout-min.js"></script>
+    <script src="../lib/knockout-repeat.js"></script>
+    <link href="../styles.css" rel="stylesheet" type="text/css"/>
+    <meta charset="utf-8">
+    <title>dbmon (knockout)</title>
+</head>
+<body>
+<!-- DBMon -->
+<div>
+    <table class="table table-striped latest-data">
+        <tbody >
+        <!-- Database -->
+        <tr data-bind="repeat: {foreach: databases, item:'$database'}">
+
+            <td class="dbname" data-bind="text: $database().dbname">
+            </td>
+            <!-- Sample -->
+
+            <td class="query-count">
+                <span data-bind="text: $database().lastSample.nbQueries, attr: { class: $database().lastSample.countClassName}">
+                </span>
+            </td>
+            <!-- Query -->
+
+            <td data-bind="repeat:{foreach: $database().lastSample.topFiveQueries, item:'$query', bind: 'css: $query().elapsedClassName'}">
+                <!--ko text:$query().formatElapsed--><!--/ko-->
+                <div class="popover left">
+                    <div class="popover-content" data-bind="text: $query().query">
+                    </div>
+                    <div class="arrow"></div>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<script src="../ENV.js"></script>
+<script src="../lib/memory-stats.js"></script>
+<script src="../lib/monitor.js"></script>
+<script src="app.js"></script>
+<script src="../ga.js"></script>
+</body>
+</html>

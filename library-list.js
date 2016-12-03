@@ -29,6 +29,7 @@
     { type: 'naive', id: 'backbone-marionette', url: './marionette', label: 'DBMON Backbone Marionette' },
     { type: 'optimized', id: 'backbone-marionette', url: './marionette/opt.html', label: 'DBMON Backbone Marionette' },
     { type: 'naive', id: 'knockout', url: './knockout', label: 'DBMON Knockout' },
+    { type: 'optimized', id: 'knockout-repeat', url: './knockout/repeat.html', label: 'DBMON Knockout (with Repeat binding)' },
     { type: 'naive', id: 'regularjs', url: './regularjs', label: 'DBMON Regularjs' },
     { type: 'naive', id: 'maskjs', url: './mask/index.html', label: 'DBMON MaskJS' },
     { type: 'naive', id: 'matreshkajs', url: './matreshka/index.html', label: 'DBMON Matreshka.js' },
